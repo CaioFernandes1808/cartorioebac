@@ -5,6 +5,7 @@
 
 int registro() //função responsável por registrar os usuários no sistema
 {
+	system("cls");
 	//inicio da criação de variáveis/strings do registro
 	char arquivo[40];
 	char cpf[40];
@@ -56,8 +57,29 @@ int registro() //função responsável por registrar os usuários no sistema
 	fprintf(file,cargo);
 	fclose(file);
 	
-	system("pause");
-	//fim do sistema de registro
+	system("cls");
+	
+	int retorno=0;
+	
+	printf("Deseja registrar outro usuário?\n\n");
+	printf("\t1 - Registrar outro usuário\n");
+	printf("\t2 - Retornar ao menu\n");
+	printf("Opção:");
+	
+	scanf("%d", &retorno);
+	
+	switch(retorno)
+	{
+		case 1:
+		registro(); //retornar para o registro de nomes
+		break;
+		
+		case 2:
+		system("pause"); // Retornar ao menu
+		break;
+		
+	}
+	
 }
 
 int consulta() //função responsável por consultar um CPF já registrado
